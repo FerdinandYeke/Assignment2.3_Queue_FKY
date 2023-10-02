@@ -60,7 +60,15 @@ public class Queue_ADT<T> //extends Generic_LinkedList
 		
 	}//Enqueue method ends here.
 
-
+	
+	/*
+	 * This method dequeues the Queue List by moving the head which
+	 * stores an Queue item to the next node, which removes the old head
+	 * while also decreaseing the Queue list length and returning the item that
+	 * has been stored in the old head.
+	 * 
+	 * @return temp returns the item located in the old head.
+	 */
 	public Generic_Node dequeue() {
 		// TODO Auto-generated method stub
 	
