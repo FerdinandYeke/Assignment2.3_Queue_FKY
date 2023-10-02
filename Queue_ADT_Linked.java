@@ -35,6 +35,14 @@ public class Queue_ADT_Linked extends Generic_LinkedList
 	public void enqueue(Generic_Node newEntry) {
 		// TODO Auto-generated method stub
 		
+		/*
+		 * If the Queue list is empty, a list is created by
+		 * the head holding the new entry, and the tail being
+		 * equal to the head.
+		 */
+		/*
+		 * @param newEntry adds an entry to the super addNode() method
+		 */
 		super.addNode(newEntry);
 		
 	}//Enqueue method ends here.
@@ -43,22 +51,30 @@ public class Queue_ADT_Linked extends Generic_LinkedList
 	/*
 	 * This method dequeues the Queue List by moving the head which
 	 * stores an Queue item to the next node, which removes the old head
-	 * while also decreaseing the Queue list length and returning the item that
+	 * while also decreasing the Queue list length and returning the item that
 	 * has been stored in the old head.
 	 * 
 	 * @return temp returns the item located in the old head.
 	 */
-	public Generic_Node dequeue() {
+	public Generic_Node dequeue() throws EmptyQueueException {
 		// TODO Auto-generated method stub
 	
-		/*
-		 * Creates a Generic_Node variable called
-		 * temp, which will hold the head. 
-		 */
+		
+		//If the queue is empty, an EmptyQueueException is thrown.
+		if(isEmpty()==true)
+		{
+			throw new EmptyQueueException("Cannot Operate on empty Queue List!");
+		}
+		
+		else {
+			/*
+			 * Creates a Generic_Node variable called
+			 * temp, which will hold the head. 
+			 */
 		Generic_Node temp;
 		
 		/*
-		 * temp is now holding the head here.
+		 * temp is now holding the head here, and the head holds an item.
 		 */
 		temp = head;
 		
@@ -76,6 +92,7 @@ public class Queue_ADT_Linked extends Generic_LinkedList
 		 * old head.
 		 */
 		return temp;
+		}
 	}//dequeue() method ends here.
 
 	
